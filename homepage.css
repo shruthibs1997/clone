@@ -1,0 +1,223 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: #2e3035;
+}
+
+.box1{
+    border: 1px solid black;
+    background-image: url("https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png");
+}
+
+
+/* navbar Css start*/
+
+
+.navbar{
+    border: 1px solid wheat;
+    display: grid;
+    grid-template-columns: 8% 8% 60% 3% 7% 7% 7%;
+    /* grid-column-gap: repeat(6,2%); */
+    padding: 0.5%;
+}
+.n1logo{
+    width: 90%;
+    height: 35px;
+}
+.n2btn{
+    width: 90%;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #1bb76e;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.searchbar{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    margin-left: 200px;
+}
+.s1{
+    height: 33px;
+    background-color: rgba(255, 255, 255,0.01);
+    border: none;
+    color:white;
+    font-weight: bold;
+    /* color: rgb(179, 170, 170) !important; */
+    font-size: 1rem;
+    outline: none;
+    margin-left: 4px;
+}
+::placeholder {
+    color: rgb(179, 170, 170) ;
+    font-weight: 100;
+}
+.material-icons{
+    color: white;
+    margin: auto;
+    margin-top: 5px;
+    border: none;
+}
+.n5btn{
+    width: 90%;
+    height: 35px;
+    background-color: #6432f9;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.n6btn{
+    width: 90%;
+    height: 35px;
+    background-color:transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+.n7btn{
+    width: 90%;
+    height: 35px;
+    background-color:#1bb76e;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+/** navbar end**/
+
+.heading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aed8ea;
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/** ticket start **/
+
+.ticket{
+    border: 1px solid white;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.tick1{
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+}
+.t1,.t2{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(196, 189, 189);
+}
+.t2{
+    position:absolute;
+    right: 0px;
+}
+.tick2{
+    border:  1px solid white;
+    margin-top: 10px;
+}
+.tbox1{
+    display: grid;
+    grid-template-columns: 17.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2%;
+    grid-column-gap: 1%;
+}
+.tb11{
+    border: 1px solid white;
+    height: 150px;
+    border-radius: 5px;
+}
+.tb11:hover{
+   transform: translateY(-3px);
+}
+.b1{
+    display: none;
+}
+.tbox2{
+    display: grid;
+    grid-template-columns: 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2% 8.2%;
+    grid-column-gap: 1%;
+    margin-top: 10px;
+}
+.display{
+    width: 90%;
+    border: 1px solid white;
+    margin: auto;
+    position: relative;
+}
+
+#dropbox1{
+    border: none;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    color:rgb(179, 170, 170);
+    position: absolute;
+    top: 0px;
+}
+#dropbox2{
+    border: none;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    color:rgb(179, 170, 170);
+    position: absolute;
+    top: 0px;
+    left: 80%;
+}
+.dpimg1{
+    position: absolute;
+    top: 0px;
+    left: 90%;
+}
+.dpimg2{
+    position: absolute;
+    top: 0px;
+    left: 93%;
+}
+#allimg{
+    border: 1px solid seagreen;
+    height: 250px;
+    width: 100%;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    grid-column-gap: 2.5%;
+    grid-row-gap: 3%;
+}
+.singleimg{
+    border: 1px solid white;
+    height: 250px;
+}
+.singlediv1{
+    border: 1px solid palegreen;
+    height: 200px;
+}
+.singlediv1img{
+    width: 100%;
+    height: 200px;
+}
+.likeview{
+    color: white;
+}

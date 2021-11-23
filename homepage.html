@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>imgur</title>
+        <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="box1">
+            <div class="navbar">
+                <div class="n1">
+                    <img class="n1logo" src="https://e7.pngegg.com/pngimages/863/402/png-clipart-imgur-logo-imgur-logo-icons-logos-emojis-tech-companies-thumbnail.png"/>
+                </div>
+                <div class="n2">
+                    <button class="n2btn">New post</button>
+                </div>
+                <div class="n3">
+                    <div class="searchbar">
+                        <input class="s1" placeholder="Images,#tags,@users oh my!"/>
+                        <i class="material-icons">search</i>
+                    </div>
+                </div>
+                <div class="n4"></div>
+                <div class="n5">
+                    <button class="n5btn">Go Ad-Free</button>
+                </div>
+                <div class="n6">
+                    <button class="n6btn" onclick="mysignin()">Sign in</button>
+                </div>
+                <div class="n7">
+                    <button class="n7btn" onclick="mysignup()">Sign up</button>
+                </div>
+            </div>
+            <div class="heading">Be the memes you want to see in the world.</div>
+            <div class="ticket">
+                <div class="tick1">
+                    <div class="t1">EXPLORE TAGS</div>
+                    <div class="t2" id="moretags">MORE TAGS +</div>
+                </div>
+                <div class="tick2">
+                    <div class="tbox1" id="tbox1id">
+                    </div>
+                    <div class="b1" id="ticketsbox">
+                        <div class="tbox2" id="tbox2id">
+                        </div>
+                        <div class="tbox2" id="tbox2id1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="display">
+            <select id="dropbox1">
+                <option value="latest">MOST VIRAL</option>
+                <option value="yellow_flower">USER SUBMITTED</option>
+                <option value="toys">HIGHTEST SCORING</option>
+            </select>   
+            <select id="dropbox2">
+                <option value="POPULAR">POPULAR</option>
+                <option value="NEWEST">NEWEST</option>
+                <option value="BEST">BEST</option>
+                <option value="RANDOM">RANDOM</option>
+            </select>   
+            <div class="dpimg1">
+                <img src="https://s.imgur.com/desktop-assets/desktop-assets/icon-filter.551faed00bcf04e07c9e01a6874bd652.svg"/>
+            </div>
+            <div class="dpimg2">
+                <img src="https://s.imgur.com/desktop-assets/desktop-assets/icon-pause.68f07ce1a7e07bac06d1f2c527d7a9e5.svg"/>
+            </div>
+            <div id="allimg">
+
+            </div>
+        </div>
+    </body>
+</html>
+<script src="ticket.js"></script>
+<script>
+    var dropbox1=document.getElementById("dropbox1");
+    function drop1selected(){
+        console.log(dropbox1.value)
+       images(`${dropbox1.value}`)
+    }
+    dropbox1.addEventListener("click",drop1selected)
+
+    async function images(x){
+        try{
+            let res = await fetch(`https://pixabay.com/api/?key=24398429-feba1e779985d480d0768a4b6&q=${x}&image_type=photo`);
+            let data = await res.json();
+            let allitems= data.hits;
+            let allimg = document.getElementById("allimg");
+            allimg.innerHTML=null;
+            allitems.forEach(el => {
+                let singleimg = document.createElement("div");
+                singleimg.classList.add("singleimg")
+                let div1= document.createElement("div");
+                div1.classList.add("singlediv1")
+                let div2=document.createElement("div");
+                let image = document.createElement("img");
+                image.src=el.previewURL;
+                image.classList.add("singlediv1img")
+                let like = document.createElement("div");
+                like.innerHTML=`Likes : ${el.likes}`;
+                like.classList.add("likeview");
+                let veiwes = document.createElement('div');
+                veiwes.innerHTML=`Veiwes : ${el.views}`;
+                veiwes.classList.add("likeview");
+                div2.append(like,veiwes);
+                div1.append(image);
+                singleimg.append(div1,div2);
+                allimg.append(singleimg);
+            });
+        }catch(err){
+            console.log(err);
+        }
+    }
+    images("latest")
+</script>
